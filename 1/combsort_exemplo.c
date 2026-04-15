@@ -1,8 +1,3 @@
-/*
- * Combsort - Visualizacao com Quadradinhos (ASCII)
- * Mostra o vetor a cada mudanca dentro de quadrados
- */
-
 #include <stdio.h>
 
 /* Funcao para trocar dois elementos */
@@ -12,11 +7,11 @@ void trocar(int *a, int *b) {
     *b = temp;
 }
 
-/* Funcao para imprimir o vetor dentro de quadradinhos (ASCII) */
+/* Funcao para imprimir o vetor dentro de quadradinhos  */
 void imprimir_vetor_quadrado(int v[], int n, int pos1, int pos2, const char *mensagem) {
     printf("\n%s\n", mensagem);
     
-    /* Linha superior */
+   
     printf("+");
     for (int i = 0; i < n; i++) {
         printf("-----");
@@ -24,11 +19,10 @@ void imprimir_vetor_quadrado(int v[], int n, int pos1, int pos2, const char *men
     }
     printf("+\n");
     
-    /* Linha dos numeros */
     printf("|");
     for (int i = 0; i < n; i++) {
         if (i == pos1 || i == pos2) {
-            printf("[%3d]", v[i]);  /* Colchetes para destaque */
+            printf("[%3d]", v[i]);  
         } else {
             printf(" %3d ", v[i]);
         }
@@ -36,7 +30,7 @@ void imprimir_vetor_quadrado(int v[], int n, int pos1, int pos2, const char *men
     }
     printf("|\n");
     
-    /* Linha inferior */
+
     printf("+");
     for (int i = 0; i < n; i++) {
         printf("-----");
@@ -44,7 +38,7 @@ void imprimir_vetor_quadrado(int v[], int n, int pos1, int pos2, const char *men
     }
     printf("+\n");
     
-    /* Indices */
+
     printf(" ");
     for (int i = 0; i < n; i++) {
         printf("  %d  ", i);
@@ -53,7 +47,7 @@ void imprimir_vetor_quadrado(int v[], int n, int pos1, int pos2, const char *men
     printf("\n");
 }
 
-/* Funcao para imprimir vetor sem destaque */
+
 void imprimir_vetor_normal(int v[], int n, const char *mensagem) {
     imprimir_vetor_quadrado(v, n, -1, -1, mensagem);
 }
@@ -196,21 +190,12 @@ void combsort(int v[], int n) {
 int main() {
     printf("\n");
     printf("+==================================================+\n");
-    printf("|            EXEMPLO 1: VETOR PEQUENO              |\n");
+    printf("|            EXEMPLO: VETOR MAIOR                 |\n");
     printf("+==================================================+\n");
     
-    int vetor1[] = {12, 11, 13, 5, 6, 7};
-    int n1 = sizeof(vetor1) / sizeof(vetor1[0]);
-    combsort(vetor1, n1);
-    
-    printf("\n\n");
-    printf("+==================================================+\n");
-    printf("|            EXEMPLO 2: VETOR MAIOR                |\n");
-    printf("+==================================================+\n");
-    
-    int vetor2[] = {8, 4, 3, 7, 6, 5, 2, 1};
-    int n2 = sizeof(vetor2) / sizeof(vetor2[0]);
-    combsort(vetor2, n2);
+    int vetor[] = {8, 4, 3, 7, 6, 5, 2, 1};
+    int n = sizeof(vetor) / sizeof(vetor[0]);
+    combsort(vetor, n);
     
     printf("\n\n");
     return 0;
