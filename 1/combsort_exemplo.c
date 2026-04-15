@@ -193,7 +193,7 @@ int main() {
     printf("|            EXEMPLO: VETOR MAIOR                 |\n");
     printf("+==================================================+\n");
     
-    int vetor[] = {8, 4, 3, 7, 6, 5, 2, 1};
+    int vetor[] = {8, 4, 3, 7, 6, 5};
     int n = sizeof(vetor) / sizeof(vetor[0]);
     combsort(vetor, n);
     
