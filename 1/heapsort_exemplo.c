@@ -1,8 +1,3 @@
-/*
- * Heapsort - Visualizacao com Quadradinhos (ASCII)
- * Mostra o vetor a cada mudanca dentro de quadrados
- */
-
 #include <stdio.h>
 #include <string.h>
 
@@ -13,7 +8,7 @@ void trocar(int *a, int *b) {
     *b = temp;
 }
 
-/* Funcao para imprimir o vetor dentro de quadradinhos (usando ASCII) */
+/* Funcao para imprimir o vetor dentro de quadradinhos  */
 void imprimir_vetor_quadrado(int v[], int n, int destaque1, int destaque2, const char *mensagem) {
     printf("\n%s\n", mensagem);
     
@@ -29,7 +24,7 @@ void imprimir_vetor_quadrado(int v[], int n, int destaque1, int destaque2, const
     printf("|");
     for (int i = 0; i < n; i++) {
         if (i == destaque1 || i == destaque2) {
-            printf("[%3d]", v[i]);  /* Colchetes para destaque */
+            printf("[%3d]", v[i]); 
         } else {
             printf(" %3d ", v[i]);
         }
@@ -54,7 +49,7 @@ void imprimir_vetor_quadrado(int v[], int n, int destaque1, int destaque2, const
     printf("\n");
 }
 
-/* Funcao para imprimir vetor sem destaque */
+
 void imprimir_vetor_normal(int v[], int n, const char *mensagem) {
     imprimir_vetor_quadrado(v, n, -1, -1, mensagem);
 }
@@ -95,7 +90,7 @@ void heapify(int v[], int n, int i) {
     }
 }
 
-/* Heapsort principal */
+
 void heapsort(int v[], int n) {
     printf("\n+=================================================+");
     printf("\n|                    HEAPSORT                      |");
