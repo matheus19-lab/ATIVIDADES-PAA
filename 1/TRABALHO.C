@@ -134,23 +134,21 @@ void heapsort(int *v, int n) {
  *  - Espaço      : O(1) — in-place
  */
 void combsort(int *v, int n) {
-    double shrink = 1.3;   /* fator de encolhimento padrão */
+    double shrink = 1.3;  
     int gap = n;
     int ordenado = 0;
 
     while (!ordenado) {
-        /* Reduz o gap */
         gap = (int)(gap / shrink);
         if (gap <= 1) {
             gap = 1;
-            ordenado = 1; /* assume ordenado até encontrar troca */
+            ordenado = 1;
         }
 
-        /* Percorre o vetor com o gap atual */
         for (int i = 0; i + gap < n; i++) {
             if (v[i] > v[i + gap]) {
                 trocar(&v[i], &v[i + gap]);
-                ordenado = 0; /* ainda há desordem */
+                ordenado = 0; 
             }
         }
     }
